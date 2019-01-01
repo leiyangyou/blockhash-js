@@ -4,9 +4,6 @@
 // Copyright 2014 Commons Machinery http://commonsmachinery.se/
 // Distributed under an MIT license, please see LICENSE in the top dir.
 
-var PNG = require('png-js');
-var jpeg = require('jpeg-js');
-
 var one_bits = [0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4];
 
 /* Calculate the hamming distance for two hashes in hex format */
@@ -218,6 +215,8 @@ var blockhashData = function(imgData, bits, method) {
 
 var blockhash = function(src, bits, method, callback) {
     var xhr;
+    var PNG = require('png-js');
+    var jpeg = require('jpeg-js');
 
     xhr = new XMLHttpRequest();
     xhr.open('GET', src, true);
